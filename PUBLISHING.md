@@ -8,14 +8,16 @@ Author: **Gabriel Patatt** · License: **MIT**
 | --- | --- |
 | Tool name | Bulk Step Builder |
 | NuGet package ID | GabrielPatatt.BulkStepBuilder |
-| Initial package version | 0.1.7 |
-| Assembly version | 0.1.7.0 |
+| Current package version | 1.0.0 |
+| Assembly version | 1.0.0.0 |
 | Project | https://github.com/G-Patatt/BulkStepBuilder |
 | Icon URL | https://raw.githubusercontent.com/G-Patatt/BulkStepBuilder/main/icon.png |
 | Host compatibility dependency | XrmToolBox >= 1.2025.10.74 |
 | Runtime | Windows, .NET Framework 4.8 |
 
-NuGet normalizes a trailing zero in four-part versions. Package 0.1.7 and assembly 0.1.7.0 represent the same release. `Pack.ps1` reads the actual release DLL version; `Test-Package.ps1` compares all four version components.
+NuGet normalizes a trailing zero in four-part versions. Package 1.0.0 and assembly 1.0.0.0 represent the same release. `Pack.ps1` reads the actual release DLL version; `Test-Package.ps1` compares all four version components.
+
+Version 0.1.7 was the first NuGet publication. Version 1.0.0 changes the release numbering and documentation only; the functional implementation remains the one validated by Gabriel Patatt in 0.1.7. Publish 1.0.0 as a new version of the same package ID; the existing 0.1.7 publication remains in its history.
 
 ## Build the package
 
@@ -32,8 +34,8 @@ The workflow also runs `tests/Package.Tests.ps1`, which verifies rejection of ex
 Output:
 
 ```text
-dist/nuget/GabrielPatatt.BulkStepBuilder.0.1.7.nupkg
-dist/nuget/GabrielPatatt.BulkStepBuilder.0.1.7.validation.json
+dist/nuget/GabrielPatatt.BulkStepBuilder.1.0.0.nupkg
+dist/nuget/GabrielPatatt.BulkStepBuilder.1.0.0.validation.json
 ```
 
 The package contains the merged extension at `lib/net48/Plugins/BulkStepBuilder.dll`, an embedded icon and README, the MIT license and the Mono.Cecil notice. License copies also accompany the installed plugin. SDK, host, test and example DLLs, keys, local paths, credentials and backups are not distributed in the NuGet package.

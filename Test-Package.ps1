@@ -54,6 +54,8 @@ try {
     $devValidation = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'packaging/validation.json') -Raw | ConvertFrom-Json
     $devValidationSummary = if ($devValidation.version -eq [string]$metadata.version -and $devValidation.status -eq 'Passed') {
         "Confirmed by $($devValidation.confirmedBy) on $($devValidation.confirmedOn) for $($devValidation.version) (user-reported end-to-end development validation)."
+    } elseif ($devValidation.status -eq 'Passed' -and [string]$metadata.version -in $devValidation.equivalentReleases) {
+        "Validation carried from $($devValidation.version), confirmed by $($devValidation.confirmedBy) on $($devValidation.confirmedOn) (user-reported). $($devValidation.equivalenceReason)"
     } else { 'Pending for this package version; simulated tests do not establish real-environment validation.' }
     $report = [ordered]@{
         PackageId = [string]$metadata.id

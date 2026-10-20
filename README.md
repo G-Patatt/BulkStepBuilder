@@ -1,6 +1,6 @@
 # Bulk Step Builder for XrmToolBox
 
-**Author: Gabriel Patatt** | Version 0.1.7
+**Author: Gabriel Patatt** | Version 1.0.0
 
 [Project](https://github.com/G-Patatt/BulkStepBuilder) · [Report an issue](https://github.com/G-Patatt/BulkStepBuilder/issues) · [MIT license](LICENSE)
 
@@ -42,7 +42,7 @@ Example: 2 tables x 2 messages x 3 stages produce 12 combinations for the same c
 
 ## Current limitations
 
-- **Gabriel Patatt confirmed the complete flow is working in a development environment on 2026-10-20 (user-reported validation for 0.1.7).** Automated local checks use a simulated service. This tool has not been published to NuGet or the Tool Library.
+- **Gabriel Patatt confirmed the complete flow is working in a development environment on 2026-10-20 (user-reported validation for 0.1.7).** Version 1.0.0 carries that implementation forward with a release-version change only. Automated local checks use a simulated service. Version 0.1.7 was published to NuGet; 1.0.0 is prepared for upload. Tool Library approval is a separate step.
 - Windows and .NET Framework 4.8. Built against XrmToolBoxPackage `1.2025.10.74`; `MscrmTools.Xrm.Connection` is pinned to `1.2025.9.64` to match the host package's binary reference.
 - Traditional strong-name-signed DLL registration only. No plugin packages (`.nupkg`) or automatic dependency deployment. Keep dependency DLLs next to the main DLL for inspection; their deployment remains the responsibility of the business assembly/package.
 - No Pre/Post images, secure configuration, impersonation, solution membership or migrations between assembly identities. Components remain in the default solution and must be added to your distribution solution separately.
