@@ -3,8 +3,8 @@
     <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <LangVersion>latest</LangVersion>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.0.1</Version>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <AssemblyName>BulkStepBuilder</AssemblyName>
     <RootNamespace>BulkStepBuilder</RootNamespace>
     <Authors>Gabriel Patatt</Authors>

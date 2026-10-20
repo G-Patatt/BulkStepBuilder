@@ -8,16 +8,16 @@ Author: **Gabriel Patatt** · License: **MIT**
 | --- | --- |
 | Tool name | Bulk Step Builder |
 | NuGet package ID | BulkStepBuilder |
-| Current package version | 1.0.1 |
-| Assembly version | 1.0.1.0 |
+| Current package version | 1.0.0.1 |
+| Assembly version | 1.0.0.1 |
 | Project | https://github.com/G-Patatt/BulkStepBuilder |
 | Icon URL | https://raw.githubusercontent.com/G-Patatt/BulkStepBuilder/main/icon.png |
 | Host compatibility dependency | XrmToolBox >= 1.2025.10.74 |
 | Runtime | Windows, .NET Framework 4.8 |
 
-NuGet normalizes a trailing zero in four-part versions. Package 1.0.1 and assembly 1.0.1.0 represent the same release. `Pack.ps1` reads the actual release DLL version; `Test-Package.ps1` compares all four version components.
+The NuGet package and assembly both use version 1.0.0.1. NuGet preserves the nonzero fourth component, so the published package keeps this exact version. `Pack.ps1` reads the actual release DLL version; `Test-Package.ps1` compares all four version components.
 
-Version 0.1.7 was first published under GabrielPatatt.BulkStepBuilder. BulkStepBuilder 1.0.0 is now published and has its own XrmToolBox portal registration. Upload 1.0.1 as a new version of BulkStepBuilder to deliver the clearer release notes. Registration behavior is unchanged.
+Version 0.1.7 was first published under GabrielPatatt.BulkStepBuilder. BulkStepBuilder 1.0.0 is now published and has its own XrmToolBox portal registration. Upload 1.0.0.1 as a new version of BulkStepBuilder to deliver the clearer release notes. Registration behavior is unchanged.
 
 ## Build the package
 
@@ -34,8 +34,8 @@ The workflow also runs `tests/Package.Tests.ps1`, which verifies rejection of ex
 Output:
 
 ```text
-dist/nuget/BulkStepBuilder.1.0.1.nupkg
-dist/nuget/BulkStepBuilder.1.0.1.validation.json
+dist/nuget/BulkStepBuilder.1.0.0.1.nupkg
+dist/nuget/BulkStepBuilder.1.0.0.1.validation.json
 ```
 
 The package contains the merged extension at `lib/net48/Plugins/BulkStepBuilder.dll`, an embedded icon and README, the MIT license and the Mono.Cecil notice. License copies also accompany the installed plugin. SDK, host, test and example DLLs, keys, local paths, credentials and backups are not distributed in the NuGet package.
@@ -73,7 +73,7 @@ https://www.nuget.org/packages/BulkStepBuilder
 
 ## Submit to the XrmToolBox Tool Library
 
-BulkStepBuilder is already registered at https://www.xrmtoolbox.com/plugins/plugininfo/?id=261e34ff-a7cc-f111-81be-000d3ab3d06e. Do not create another registration for 1.0.1. Publish the new version on NuGet, then let the portal import it or use My Tools to request an update. The following steps are retained as the initial-registration procedure:
+BulkStepBuilder is already registered at https://www.xrmtoolbox.com/plugins/plugininfo/?id=261e34ff-a7cc-f111-81be-000d3ab3d06e. Do not create another registration for 1.0.0.1. Publish the new version on NuGet, then let the portal import it or use My Tools to request an update. The following steps are retained as the initial-registration procedure:
 
 1. Sign in at https://www.xrmtoolbox.com/.
 2. Open https://www.xrmtoolbox.com/plugins/new/.
