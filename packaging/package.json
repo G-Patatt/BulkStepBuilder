@@ -1,5 +1,5 @@
 {
-  "id": "GabrielPatatt.BulkStepBuilder",
+  "id": "BulkStepBuilder",
   "title": "Bulk Step Builder for XrmToolBox",
   "authors": "Gabriel Patatt",
   "projectUrl": "https://github.com/G-Patatt/BulkStepBuilder",
@@ -9,5 +9,5 @@
   "minimumXrmToolBoxVersion": "1.2025.10.74",
   "description": "Build multiple Microsoft Dataverse plugin steps for one selected class. Inspect a local DLL, choose a class, select tables and configure messages, stages, execution mode and per-table Update filtering attributes. Review the batch before registering the assembly, class and new steps. Existing steps are preserved, with individual results and CSV export.",
   "tags": "XrmToolBox Dataverse Dynamics365 PowerPlatform PluginRegistration BulkSteps",
-  "releaseNotes": "1.0.0: Promote the user-validated 0.1.7 implementation to the 1.0 release line. NuGet package version is 1.0.0 and assembly version is 1.0.0.0. This is a version-only release; plugin registration behavior is unchanged. Includes explicit class selection, searchable tables, per-table Update attributes, batch preview, duplicate detection, signing guidance, actionable errors and CSV export."
+  "releaseNotes": "1.0.0: Publish under the package ID BulkStepBuilder and promote the user-validated 0.1.7 implementation to the 1.0 release line. NuGet package version is 1.0.0 and assembly version is 1.0.0.0. Package identity, release numbering and documentation changed; plugin registration behavior is unchanged. Includes explicit class selection, searchable tables, per-table Update attributes, batch preview, duplicate detection, signing guidance, actionable errors and CSV export."
 }

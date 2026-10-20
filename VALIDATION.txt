@@ -21,12 +21,12 @@ Earlier local installation of 0.1.7.0 was performed with XrmToolBox closed; its 
 The actual installed host's ManifestLoader resolved and instantiated the tool from its synchronized catalog entry. The installed reader discovered all three classes in BulkStepBuilder.Example.dll.
 
 NuGet distribution preparation - 2026-10-20
-Package ID: GabrielPatatt.BulkStepBuilder; current package version 1.0.0 matches assembly version 1.0.0.0 after NuGet trailing-zero normalization.
+Package ID: BulkStepBuilder; current package version 1.0.0 matches assembly version 1.0.0.0 after NuGet trailing-zero normalization. Author remains Gabriel Patatt.
 Package layout, MIT license, Mono.Cecil notices, embedded icon/README, author, URLs, host dependency and packaged DLL hash are checked by Test-Package.ps1.
 Five package regression cases passed: extra DLL, mismatched version, development dependency instead of host dependency, missing license and changed DLL payload are all rejected.
 GitHub Actions builds, tests and produces a package artifact without automatic NuGet publication or Tool Library submission.
 The GitHub project page and raw icon URL returned successful public responses without authentication.
 
 Release 1.0.0 - 2026-10-20
-Version-only promotion of the user-validated 0.1.7 implementation. No functional plugin-registration changes.
+Promotion of the user-validated 0.1.7 implementation with package identity, release numbering and documentation changes only. No functional plugin-registration changes.
 The original user-reported DEV confirmation remains attributed to 0.1.7; packaging/validation.json records its applicability to the equivalent 1.0.0 release.

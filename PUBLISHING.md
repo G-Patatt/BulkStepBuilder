@@ -7,7 +7,7 @@ Author: **Gabriel Patatt** · License: **MIT**
 | Field | Value |
 | --- | --- |
 | Tool name | Bulk Step Builder |
-| NuGet package ID | GabrielPatatt.BulkStepBuilder |
+| NuGet package ID | BulkStepBuilder |
 | Current package version | 1.0.0 |
 | Assembly version | 1.0.0.0 |
 | Project | https://github.com/G-Patatt/BulkStepBuilder |
@@ -17,7 +17,7 @@ Author: **Gabriel Patatt** · License: **MIT**
 
 NuGet normalizes a trailing zero in four-part versions. Package 1.0.0 and assembly 1.0.0.0 represent the same release. `Pack.ps1` reads the actual release DLL version; `Test-Package.ps1` compares all four version components.
 
-Version 0.1.7 was the first NuGet publication. Version 1.0.0 changes the release numbering and documentation only; the functional implementation remains the one validated by Gabriel Patatt in 0.1.7. Publish 1.0.0 as a new version of the same package ID; the existing 0.1.7 publication remains in its history.
+Version 0.1.7 was first published under GabrielPatatt.BulkStepBuilder. The current package ID is BulkStepBuilder. Upload BulkStepBuilder 1.0.0 as a separate NuGet package, not as a new version of the previous ID. The previous publication remains under its original ID. The functional implementation remains the one validated by Gabriel Patatt in 0.1.7; package identity, release numbering and documentation changed.
 
 ## Build the package
 
@@ -34,8 +34,8 @@ The workflow also runs `tests/Package.Tests.ps1`, which verifies rejection of ex
 Output:
 
 ```text
-dist/nuget/GabrielPatatt.BulkStepBuilder.1.0.0.nupkg
-dist/nuget/GabrielPatatt.BulkStepBuilder.1.0.0.validation.json
+dist/nuget/BulkStepBuilder.1.0.0.nupkg
+dist/nuget/BulkStepBuilder.1.0.0.validation.json
 ```
 
 The package contains the merged extension at `lib/net48/Plugins/BulkStepBuilder.dll`, an embedded icon and README, the MIT license and the Mono.Cecil notice. License copies also accompany the installed plugin. SDK, host, test and example DLLs, keys, local paths, credentials and backups are not distributed in the NuGet package.
@@ -69,13 +69,13 @@ The development flow confirmation is user-reported and separate from the automat
 Never upload the source ZIP, test fixture DLL or example business DLL as this package. NuGet versions are immutable; publish a new version for a changed release. Do not commit API keys or access tokens. No API key is needed for the manual website upload.
 
 Expected package page after publication:
-https://www.nuget.org/packages/GabrielPatatt.BulkStepBuilder
+https://www.nuget.org/packages/BulkStepBuilder
 
 ## Submit to the XrmToolBox Tool Library
 
 1. Sign in at https://www.xrmtoolbox.com/.
 2. Open https://www.xrmtoolbox.com/plugins/new/.
-3. Enter the published package ID: **GabrielPatatt.BulkStepBuilder**.
+3. Enter the published package ID: **BulkStepBuilder**.
 4. Review the information imported from NuGet and submit it for administrator validation.
 5. Address review feedback and verify installation through the Tool Library after approval.
 
