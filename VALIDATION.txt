@@ -1,0 +1,27 @@
+Local validation - 2026-10-20
+Version: 0.1.7
+Author: Gabriel Patatt
+
+Release build: successful, 0 errors and 0 warnings.
+56 automated service/inspection checks passed.
+Host load-context regression test passed.
+Wizard and attribute picker: 13 additional checks; total 69 with rendering.
+Per-table attribute metadata excludes primary keys and derived/logical helper columns.
+Verified independent checkbox selections, search preservation, table switching, all-updates mode, and Apply without mutating initial selections.
+Verified accountnumber on Account and lastname on Contact are validated and sent independently to each table's new Update steps.
+Review and CSV expose the requested per-table Update attributes. Existing steps remain unchanged.
+The picker and wizard were rendered with simulated metadata and visually reviewed.
+Verified unsigned and delay-signed DLL detection, signing instructions before writes, blocked wizard navigation, original-key mismatch guidance, and Dataverse signing/permission errors with server codes.
+Verified assembly/class setup failure marks pending steps Not attempted, explains possible saved changes, and preserves the actual error and failed phase. Individual step failures retain actionable details.
+Signing checks inspect public-key/signing metadata; cryptographic signature verification remains with Dataverse on upload.
+
+No Dataverse writes were performed. End-to-end verification of the attribute picker in the user's environment remains pending installation and restart.
+Install.ps1 requires XrmToolBox to be closed and keeps DLL/catalog identity synchronized.
+Installed 0.1.7.0 with XrmToolBox closed. Release/installed DLL SHA-256 hashes and cached assembly identity match.
+The actual installed host's ManifestLoader resolved and instantiated the tool from its synchronized catalog entry. The installed reader discovered all three classes in BulkStepBuilder.Example.dll.
+
+NuGet distribution preparation - 2026-10-20
+Package ID: GabrielPatatt.BulkStepBuilder; package version 0.1.7 matches assembly version 0.1.7.0 after NuGet trailing-zero normalization.
+Package layout, MIT license, Mono.Cecil notices, embedded icon/README, author, URLs, host dependency and packaged DLL hash are checked by Test-Package.ps1.
+Five package regression cases passed: extra DLL, mismatched version, development dependency instead of host dependency, missing license and changed DLL payload are all rejected.
+GitHub Actions builds, tests and produces a package artifact without automatic NuGet publication or Tool Library submission.

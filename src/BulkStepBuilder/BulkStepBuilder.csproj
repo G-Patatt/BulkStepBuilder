@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <Version>0.1.7</Version>
+    <AssemblyVersion>0.1.7.0</AssemblyVersion>
+    <AssemblyName>BulkStepBuilder</AssemblyName>
+    <RootNamespace>BulkStepBuilder</RootNamespace>
+    <Authors>Gabriel Patatt</Authors>
+    <Company>Gabriel Patatt</Company>
+    <Copyright>Copyright © 2026 Gabriel Patatt</Copyright>
+    <Description>Register multiple Dataverse plugin steps for one selected class.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2025.10.74" />
+    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2025.9.64" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" PrivateAssets="all" GeneratePathProperty="true" />
+    <PackageReference Include="ILRepack" Version="2.0.48" PrivateAssets="all" IncludeAssets="none" GeneratePathProperty="true" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <Target Name="MergeMetadataReader" AfterTargets="Build">
+    <MakeDir Directories="$(IntermediateOutputPath)merged" />
+    <Exec Command="&quot;$(PkgILRepack)\tools\ILRepack.exe&quot; /internalize /target:library /ndebug /out:&quot;$(IntermediateOutputPath)merged\$(TargetFileName)&quot; /lib:&quot;$(TargetDir).&quot; &quot;$(IntermediateOutputPath)$(TargetFileName)&quot; &quot;$(PkgMono_Cecil)\lib\net40\Mono.Cecil.dll&quot;" />
+    <Copy SourceFiles="$(IntermediateOutputPath)merged\$(TargetFileName)" DestinationFiles="$(TargetPath)" />
+  </Target>
+</Project>

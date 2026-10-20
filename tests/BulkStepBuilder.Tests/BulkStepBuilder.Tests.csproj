@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/BulkStepBuilder/BulkStepBuilder.csproj" />
+    <ProjectReference Include="../Fixture/Fixture.csproj" />
+    <ProjectReference Include="../UnsignedFixture/UnsignedFixture.csproj" />
+    <ProjectReference Include="../DelaySignedFixture/DelaySignedFixture.csproj" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+</Project>

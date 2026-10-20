@@ -1,0 +1,42 @@
+name: Validate and package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build and run service and inspector regression tests
+        shell: pwsh
+        run: ./build.ps1 -Test
+      - name: Run local wizard and attribute picker checks
+        shell: pwsh
+        run: |
+          ./tests/BulkStepBuilder.Tests/bin/Release/net48/BulkStepBuilder.Tests.exe ./packaging/obj/preview
+          if ($LASTEXITCODE -ne 0) { throw 'Wizard checks failed.' }
+      - name: Create and validate the NuGet package
+        shell: pwsh
+        run: |
+          ./Pack.ps1 -SkipBuild
+          $package = Get-ChildItem ./dist/nuget/*.nupkg | Select-Object -First 1
+          ./tests/Package.Tests.ps1 -PackagePath $package.FullName
+      - name: Upload package, validation report and UI previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: BulkStepBuilder-package
+          path: |
+            dist/nuget/*.nupkg
+            dist/nuget/*.validation.json
+            packaging/obj/preview/*.png
+          if-no-files-found: error
