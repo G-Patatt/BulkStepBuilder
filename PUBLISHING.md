@@ -52,7 +52,7 @@ Metadata is maintained in `packaging/package.json`. Generated NuGet manifests ar
 - [x] The installed host's catalog loader has instantiated the tool locally.
 - [ ] Complete an end-to-end run in a disposable Dataverse development environment: register the harmless business DLL, create the requested steps, verify in PRT, trigger the relevant operations, confirm filtering and generate the same preview again without duplicates.
 - [ ] Check connection selection and resize behavior interactively in the supported XrmToolBox host.
-- [ ] Run `Pack.ps1 -VerifyPublicUrls` after the repository is public and the main branch contains the icon.
+- [x] Project page and raw icon URL were checked without authentication after the main branch was made public. Repeat `Pack.ps1 -VerifyPublicUrls` for each release.
 
 Local automated checks do not establish successful real-environment registration. Do not mark the remaining checks complete until performed. Package preparation is separate from NuGet publication and XrmToolBox approval.
 
