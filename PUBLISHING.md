@@ -50,11 +50,11 @@ Metadata is maintained in `packaging/package.json`. Generated NuGet manifests ar
 - [x] Local simulated-service tests cover preview, assembly/class/step registration, duplicates, per-table attributes and individual failures.
 - [x] Local wizard rendering and attribute picker tests are available.
 - [x] The installed host's catalog loader has instantiated the tool locally.
-- [ ] Complete an end-to-end run in a disposable Dataverse development environment: register the harmless business DLL, create the requested steps, verify in PRT, trigger the relevant operations, confirm filtering and generate the same preview again without duplicates.
+- [x] Gabriel Patatt confirmed on 2026-10-20 that the complete flow is tested and working in a development environment (user-reported validation for 0.1.7; recorded in `packaging/validation.json`).
 - [ ] Check connection selection and resize behavior interactively in the supported XrmToolBox host.
 - [x] Project page and raw icon URL were checked without authentication after the main branch was made public. Repeat `Pack.ps1 -VerifyPublicUrls` for each release.
 
-Local automated checks do not establish successful real-environment registration. Do not mark the remaining checks complete until performed. Package preparation is separate from NuGet publication and XrmToolBox approval.
+The development flow confirmation is user-reported and separate from the automated simulated-service checks. Interactive resize behavior has no explicit validation record yet. Package preparation is separate from NuGet publication and XrmToolBox approval.
 
 ## Publish on NuGet.org
 

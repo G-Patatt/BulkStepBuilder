@@ -41,7 +41,7 @@ Existing steps are preserved. Updates to changed DLL content require explicit se
 
 Individual DLLs only: no plugin packages or automatic runtime dependency deployment. No images, secure configuration, impersonation, solution membership or assembly identity migrations.
 
-The 0.1.7 build has automated local validation using a simulated organization service. Full registration and plugin execution in a real Dataverse development environment must be validated before production use. Package preparation does not imply XrmToolBox approval.
+Gabriel Patatt confirmed on 2026-10-20 that the complete flow is working in a development environment (user-reported validation for 0.1.7). Automated local validation uses a simulated organization service. Package preparation does not imply XrmToolBox approval.
 
 [Project and documentation](https://github.com/G-Patatt/BulkStepBuilder) · [Report an issue](https://github.com/G-Patatt/BulkStepBuilder/issues)
 

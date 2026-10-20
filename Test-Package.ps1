@@ -51,6 +51,10 @@ try {
         Assert-Package ($icon.StatusCode -eq 200 -and $icon.Headers['Content-Type'] -match '^image/(png|jpeg)') 'Icon URL must return a public image.'
         $urlsVerified = $true
     }
+    $devValidation = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'packaging/validation.json') -Raw | ConvertFrom-Json
+    $devValidationSummary = if ($devValidation.version -eq [string]$metadata.version -and $devValidation.status -eq 'Passed') {
+        "Confirmed by $($devValidation.confirmedBy) on $($devValidation.confirmedOn) for $($devValidation.version) (user-reported end-to-end development validation)."
+    } else { 'Pending for this package version; simulated tests do not establish real-environment validation.' }
     $report = [ordered]@{
         PackageId = [string]$metadata.id
         Version = [string]$metadata.version
@@ -64,7 +68,7 @@ try {
         PublicUrlsVerified = $urlsVerified
         PackagedDllSha256 = $hash
         PackageSha256 = (Get-FileHash -LiteralPath $package).Hash
-        RealDataverseRegistrationValidation = 'Pending; simulated service tests do not establish real-environment validation.'
+        RealDataverseRegistrationValidation = $devValidationSummary
         PublicationStatus = 'Prepared locally; not uploaded to NuGet or submitted to XrmToolBox.'
     }
     $reportPath = [IO.Path]::ChangeExtension($package, '.validation.json')

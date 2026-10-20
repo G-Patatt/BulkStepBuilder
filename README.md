@@ -42,7 +42,7 @@ Example: 2 tables x 2 messages x 3 stages produce 12 combinations for the same c
 
 ## Current limitations
 
-- **Built and tested locally with a simulated service. End-to-end testing in a real Dataverse development environment and installed XrmToolBox host is still required.** This tool has not been published to NuGet or the Tool Library.
+- **Gabriel Patatt confirmed the complete flow is working in a development environment on 2026-10-20 (user-reported validation for 0.1.7).** Automated local checks use a simulated service. This tool has not been published to NuGet or the Tool Library.
 - Windows and .NET Framework 4.8. Built against XrmToolBoxPackage `1.2025.10.74`; `MscrmTools.Xrm.Connection` is pinned to `1.2025.9.64` to match the host package's binary reference.
 - Traditional strong-name-signed DLL registration only. No plugin packages (`.nupkg`) or automatic dependency deployment. Keep dependency DLLs next to the main DLL for inspection; their deployment remains the responsibility of the business assembly/package.
 - No Pre/Post images, secure configuration, impersonation, solution membership or migrations between assembly identities. Components remain in the default solution and must be added to your distribution solution separately.
@@ -106,7 +106,7 @@ preview/                     Wizard images rendered with simulated data
 
 The distribution package ID is **GabrielPatatt.BulkStepBuilder**. Run `./Pack.ps1 -VerifyPublicUrls` on Windows to build, test, package and validate it. The package includes the merged DLL under `lib/net48/Plugins`, an embedded icon and README, the MIT license and third-party notices. It declares the `XrmToolBox` host compatibility dependency rather than the development dependency `XrmToolBoxPackage`.
 
-See [PUBLISHING.md](PUBLISHING.md) for the remaining real-environment checks, NuGet upload and XrmToolBox submission steps. The GitHub Actions workflow produces a validated package artifact. Creating a package or pushing source code does not publish the package or imply approval in the Tool Library.
+See [PUBLISHING.md](PUBLISHING.md) for the validation record, NuGet upload and XrmToolBox submission steps. The GitHub Actions workflow produces a validated package artifact. Creating a package or pushing source code does not publish the package or imply approval in the Tool Library.
 
 ## Interface previews
 
