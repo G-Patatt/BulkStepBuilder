@@ -1,6 +1,6 @@
 # Bulk Step Builder
 
-**By Gabriel Patatt** · Version 1.0.0 · An XrmToolBox tool for Microsoft Dataverse.
+**By Gabriel Patatt** · Version 1.0.1 · An XrmToolBox tool for Microsoft Dataverse.
 
 NuGet package ID: **BulkStepBuilder**.
 
@@ -45,7 +45,7 @@ Individual DLLs only: no plugin packages or automatic runtime dependency deploym
 
 Gabriel Patatt confirmed on 2026-10-20 that the complete flow is working in a development environment (user-reported validation for 0.1.7). Automated local validation uses a simulated organization service. Package preparation does not imply XrmToolBox approval.
 
-Version 1.0.0 promotes the same implementation to the 1.0 release line under the package ID BulkStepBuilder, with assembly version 1.0.0.0. Registration behavior is unchanged from 0.1.7.
+Version 1.0.1 updates the release notes shown in the package listing. Registration behavior is unchanged from the validated implementation.
 
 [Project and documentation](https://github.com/G-Patatt/BulkStepBuilder) · [Report an issue](https://github.com/G-Patatt/BulkStepBuilder/issues)
 

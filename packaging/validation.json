@@ -1,7 +1,7 @@
 {
   "version": "0.1.7",
-  "equivalentReleases": ["1.0.0"],
-  "equivalenceReason": "BulkStepBuilder 1.0.0 changes package identity, release numbering and documentation only; the functional implementation is unchanged from 0.1.7.",
+  "equivalentReleases": ["1.0.0", "1.0.1"],
+  "equivalenceReason": "The 1.0.0 and 1.0.1 releases change package metadata, release numbering and documentation only; the functional implementation is unchanged from 0.1.7.",
   "environmentType": "Development",
   "status": "Passed",
   "confirmedBy": "Gabriel Patatt",
